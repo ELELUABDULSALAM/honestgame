@@ -5,8 +5,7 @@
 /.pnp
 .pnp.js
 
-# testinggit remote add origin https://github.com/ELELUABDULSALAM/honestgame.git
-git branch -M main
+# testing
 /coverage
 
 # production
