@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/honestgame/static/css/main.4dfa90f0.chunk.css",
-    "main.js": "/honestgame/static/js/main.9caffa79.chunk.js",
-    "main.js.map": "/honestgame/static/js/main.9caffa79.chunk.js.map",
+    "main.js": "/honestgame/static/js/main.a654ac5e.chunk.js",
+    "main.js.map": "/honestgame/static/js/main.a654ac5e.chunk.js.map",
     "runtime-main.js": "/honestgame/static/js/runtime-main.766d3f4c.js",
     "runtime-main.js.map": "/honestgame/static/js/runtime-main.766d3f4c.js.map",
     "static/js/2.675830d3.chunk.js": "/honestgame/static/js/2.675830d3.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.766d3f4c.js",
     "static/js/2.675830d3.chunk.js",
     "static/css/main.4dfa90f0.chunk.css",
-    "static/js/main.9caffa79.chunk.js"
+    "static/js/main.a654ac5e.chunk.js"
   ]
 }
