@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import ListItemPage from "./ListItemPage";
 
 export default function Checkbox(props) {
+  const { value } = props;
   return (
     <div>
       <ul>
@@ -10,7 +12,7 @@ export default function Checkbox(props) {
           value={props.id}
           onChange={props.handleInput}
         />
-        {props.value}
+        <ListItemPage value={value} />
       </ul>
     </div>
   );

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
 
 export default function DisplayResult(props) {
-    return (
-        <div>
-            <p>
-                Result: {props.result}
-            </p>
-        </div>
-    )
+//   console.log(props);
+  const { results, totalCount, textResult } = props;
+  return (
+    <div>
+      <p>
+        Result: {results}/{totalCount}
+      </p>
+      <p>{textResult}</p>
+    </div>
+  );
 }

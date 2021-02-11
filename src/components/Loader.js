@@ -14,9 +14,3 @@ export default function Loader(props) {
     </div>
   );
 }
-
-// const override = css`
-//   display: block;
-//   margin: 0 auto;
-//   border-color: red;
-// `;

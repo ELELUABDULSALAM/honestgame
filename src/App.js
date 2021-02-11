@@ -4,7 +4,7 @@ import "./App.css";
 import CheckBox from "./components/CheckBox";
 import DisplayResult from "./components/DisplayResult";
 import Button from "./components/Button";
-import Loader from "./components/Loader";
+// import Loader from "./components/Loader";
 
 export default function App() {
   const [itemLists, setitemLists] = useState([
@@ -12,18 +12,22 @@ export default function App() {
     { id: 2, value: "before", isChecked: false },
     { id: 3, value: "date before", isChecked: false },
     { id: 4, value: "speak with my ex", isChecked: false },
+    { id: 5, value: "speak with my e", isChecked: false },
+    { id: 6, value: "speak with my", isChecked: false },
   ]);
-  const [result, setresult] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [results, setresults] = useState(0);
+  const [loadings, setLoadings] = useState(false);
+  const [resultStores, setresultStores] = useState([
+    { id: 1, value: "You are still and innocent man 1", score: 1 },
+    { id: 2, value: "You are still and innocent man 2", score: 2 },
+    { id: 3, value: "You are still and innocent man 3", score: 3 },
+    { id: 4, value: "You are still and innocent man 4", score: 4 },
+    { id: 5, value: "You are still and innocent man 5", score: 5 },
+    { id: 6, value: "You are still and innocent man 6", score: 6 },
+  ]);
 
-  const GameAnswer = [
-    { id: 1, value: "You are still and innocent man" },
-    { id: 1, value: "You are still and innocent man" },
-    { id: 1, value: "You are still and innocent man" },
-    { id: 1, value: "You are still and innocent man" },
-    { id: 1, value: "You are still and innocent man" },
-    { id: 1, value: "You are still and innocent man" },
-  ];
+  const totalCount = Object.keys(itemLists).length;
+  var textResult;
 
   const handleInput = (event) => {
     setitemLists(
@@ -41,22 +45,47 @@ export default function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setLoading(true);
-    setresult(
+    // setLoadings(false);
+    setresults(
       itemLists.filter((itemList) => itemList.isChecked === true).length
     );
-    setLoading(false);
+  };
+
+  const handleClear = () => {
+    setresults(0);
   };
 
   return (
     <div className="App">
       Innocent Game
-      <Loader loading={loading} />
-      {itemLists.map((itemList, key) => {
-        return <CheckBox handleInput={handleInput} key={key} {...itemList} />;
-      })}
-      <Button handleSubmit={handleSubmit} />
-      <DisplayResult result={result} />
+      {results <= 0 ? (
+        <div>
+          {itemLists.map((itemList, key) => {
+            return (
+              <CheckBox handleInput={handleInput} key={key} {...itemList} />
+            );
+          })}
+          <Button handleSubmit={handleSubmit} />
+        </div>
+      ) : (
+        <div>
+          {resultStores.map((resultStore) => {
+            if (results === resultStore.id) {
+              textResult = resultStore.value;
+            }
+            return null;
+          })}
+          <DisplayResult
+            textResult={textResult}
+            totalCount={totalCount}
+            results={results}
+          />
+          ;
+          <button type="button" onClick={handleClear}>
+            Go Back
+          </button>
+        </div>
+      )}
     </div>
   );
 }
